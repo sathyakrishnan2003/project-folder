@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HTML5 Structure and Semantics Practice">
     <title>HTML5 Structure & Semantics</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -14,8 +15,11 @@
     <h1>HTML5 Structure & Semantics</h1>
 </header>
 
-<nav aria-label="Main Navigation">
-    <ul>
+<!-- Flexbox Navigation -->
+<nav class="navbar" aria-label="Main Navigation">
+    <div class="logo">My Portfolio</div>
+
+    <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
@@ -35,9 +39,17 @@
             Semantic HTML elements improve accessibility,
             SEO, and code readability.
         </p>
-
     </article>
+</section>
 
+<!-- CSS Grid Cards -->
+<section class="grid-container">
+    <div class="card">Project 1</div>
+    <div class="card">Project 2</div>
+    <div class="card">Project 3</div>
+    <div class="card">Project 4</div>
+    <div class="card">Project 5</div>
+    <div class="card">Project 6</div>
 </section>
 
 <aside aria-label="Related Information">
@@ -47,14 +59,20 @@
         <li><a href="#">HTML Reference</a></li>
         <li><a href="#">Accessibility Guide</a></li>
     </ul>
-
 </aside>
+
+<!-- Day 3 Interactive Button -->
+<section style="text-align:center; margin:30px;">
+    <button id="btn">Click Me</button>
+</section>
 
 </main>
 
 <footer>
     <p>&copy; 2026 Cynaris Internship</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
