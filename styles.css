@@ -1,68 +1,337 @@
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #333;
+/* CSS Variables */
+
+:root{
+
+--bg:#f5f5f5;
+
+--text:#222;
+
+--primary:#0077cc;
+
+--card:white;
+
+}
+
+.dark{
+
+--bg:#1f1f1f;
+
+--text:white;
+
+--primary:#00bfff;
+
+--card:#333;
+
+}
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+line-height:1.6;
+
 }
 
 /* Header */
-header {
-    background-color: #0077cc;
-    color: white;
-    text-align: center;
-    padding: 20px;
+
+header{
+
+background:var(--primary);
+
+color:white;
+
+padding:25px;
+
+text-align:center;
+
 }
 
-/* Section */
-section {
-    margin-bottom: 20px;
+/* Sticky Navbar */
+
+.navbar{
+
+position:sticky;
+
+top:0;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px 25px;
+
+background:#333;
+
+z-index:1000;
+
 }
 
-section h2,
-section h3 {
-    color: #0077cc;
+.logo{
+
+color:white;
+
+font-size:22px;
+
+font-weight:bold;
+
 }
 
-/* Cards */
-.card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s;
+.nav-links{
+
+display:flex;
+
+gap:20px;
+
+list-style:none;
+
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.nav-links a{
+
+color:white;
+
+text-decoration:none;
+
 }
 
-/* Aside */
-aside {
-    background: white;
-    padding: 15px;
-    border-left: 4px solid #0077cc;
+.nav-links a:hover{
+
+color:yellow;
+
+}
+
+/* Theme Button */
+
+#themeBtn{
+
+padding:8px 16px;
+
+cursor:pointer;
+
+border:none;
+
+border-radius:5px;
+
+}
+
+/* Sections */
+
+section{
+
+padding:30px;
+
+}
+
+/* Grid */
+
+.grid-container{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.card{
+
+background:var(--card);
+
+padding:35px;
+
+text-align:center;
+
+border-radius:8px;
+
+box-shadow:0 2px 8px rgba(0,0,0,.2);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+/* Pseudo Elements */
+
+h2::before{
+
+content:"★ ";
+
+color:orange;
+
+}
+
+footer::after{
+
+content:" | CSS Advanced";
+
+color:yellow;
+
+}
+
+/* Spinner */
+
+.spinner{
+
+width:50px;
+
+height:50px;
+
+margin:25px auto;
+
+border:5px solid #ddd;
+
+border-top:5px solid var(--primary);
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* Progress */
+
+.progress{
+
+width:80%;
+
+margin:20px auto;
+
+height:15px;
+
+background:#ddd;
+
+border-radius:10px;
+
+overflow:hidden;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+width:70%;
+
+background:var(--primary);
+
+animation:load 2s;
+
+}
+
+@keyframes load{
+
+from{
+
+width:0;
+
+}
+
+to{
+
+width:70%;
+
+}
+
 }
 
 /* Button */
-#btn {
-    padding: 10px 20px;
-    background: #0077cc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+#btn{
+
+padding:12px 25px;
+
+background:var(--primary);
+
+color:white;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
 }
 
-#btn:hover {
-    background: #005fa3;
+#btn:hover{
+
+transform:scale(1.05);
+
 }
 
 /* Footer */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
+
+footer{
+
+background:#333;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:30px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+}
+
+.nav-links{
+
+flex-direction:column;
+
+}
+
+.grid-container{
+
+grid-template-columns:1fr;
+
+}
+
 }

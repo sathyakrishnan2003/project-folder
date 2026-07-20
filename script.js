@@ -1,54 +1,19 @@
-// ==============================
-// JavaScript ES6+ Basics
-// Week 1 - Day 3
-// ==============================
+// Theme Switcher
 
-// Arrow Function + Template Literal
-const greet = (name) => `Hello, ${name}! Welcome to JavaScript ES6+.`;
+const themeBtn = document.getElementById("themeBtn");
 
-// Object Destructuring
-const student = {
-    name: "Sathya",
-    course: "MCA",
-    year: "2nd Year"
-};
+themeBtn.addEventListener("click", () => {
 
-const { name, course, year } = student;
+document.body.classList.toggle("dark");
 
-console.log("Name:", name);
-console.log("Course:", course);
-console.log("Year:", year);
+});
 
-// Array
-const numbers = [10, 20, 30, 40, 50];
+// Existing Button
 
-// map()
-const doubled = numbers.map(num => num * 2);
-console.log("Doubled:", doubled);
+const btn = document.getElementById("btn");
 
-// filter()
-const greaterThan25 = numbers.filter(num => num > 25);
-console.log("Greater Than 25:", greaterThan25);
+btn.addEventListener("click", () => {
 
-// reduce()
-const total = numbers.reduce((sum, num) => sum + num, 0);
-console.log("Total:", total);
+alert("Button Clicked!");
 
-// Array Destructuring
-const colors = ["Red", "Green", "Blue"];
-
-const [firstColor, secondColor, thirdColor] = colors;
-
-console.log("First Color:", firstColor);
-console.log("Second Color:", secondColor);
-console.log("Third Color:", thirdColor);
-
-// Event Listener
-const button = document.getElementById("btn");
-
-button.addEventListener("click", () => {
-    alert(greet(name));
-
-    button.textContent = "Clicked!";
-    button.style.backgroundColor = "green";
 });
