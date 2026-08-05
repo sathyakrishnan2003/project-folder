@@ -54,6 +54,6 @@ for version; do
 		} > "$dir/Dockerfile"
 
 		cp docker-*.sh "$dir"/
-		sed -i '/# entrypoint-utils.sh/r entrypoint-utils.sh' "$dir"/docker-*.sh
+		cp entrypoint-utils.sh "$dir"/
 	done
 done

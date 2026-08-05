@@ -2,8 +2,7 @@
 
 set -euo pipefail
 
-# entrypoint-utils.sh
-# END: entrypoint-utils.sh
+source entrypoint-utils.sh
 
 exitIfNotReady
 applyConfigEnv

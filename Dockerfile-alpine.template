@@ -110,7 +110,7 @@ RUN set -eux; \
     chown -R www-data:www-data ./data ./custom ./client/custom; \
     chmod +x ./bin/command
 
-COPY ./docker-*.sh  /usr/local/bin/
+COPY ./docker-*.sh ./entrypoint-utils.sh /usr/local/bin/
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 
