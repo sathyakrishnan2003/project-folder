@@ -55,7 +55,6 @@ RUN set -eux; \
         ldap \
         exif \
         pcntl \
-        posix \
         bcmath \
     ; \
     docker-php-ext-enable \
