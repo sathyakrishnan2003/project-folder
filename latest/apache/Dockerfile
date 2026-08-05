@@ -71,7 +71,6 @@ RUN set -eux; \
         ldap \
         exif \
         pcntl \
-        posix \
         bcmath \
     ; \
     docker-php-ext-enable \
@@ -112,7 +111,7 @@ RUN { \
 } > ${PHP_INI_DIR}/conf.d/espocrm.ini
 
 RUN set -eux; \
-	a2enmod rewrite
+	a2enmod rewrite ssl proxy proxy_wstunnel
 
 ENV ESPOCRM_VERSION 10.0.3
 ENV ESPOCRM_SHA256 73369bb3e319846c99f1b6d0254fac9339bbfe46705d6dd882eaf648f85b87b1
@@ -127,9 +126,7 @@ RUN set -eux; \
     rm -rf /usr/src/EspoCRM*; \
     mkdir -p /usr/src/espocrm; \
     cp -a ./client/ /usr/src/espocrm/; \
-    cp -a ./public/ /usr/src/espocrm/
-
-RUN set -eux; \
+    cp -a ./public/ /usr/src/espocrm/; \
     rm -rf ./install; \
     find . -type d -exec chmod 755 {} +; \
     find . -type f -exec chmod 644 {} +; \
@@ -137,7 +134,7 @@ RUN set -eux; \
     chown -R www-data:www-data ./data ./custom ./client/custom; \
     chmod +x ./bin/command
 
-COPY ./docker-*.sh  /usr/local/bin/
+COPY ./docker-*.sh ./entrypoint-utils.sh /usr/local/bin/
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 

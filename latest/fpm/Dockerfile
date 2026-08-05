@@ -71,7 +71,6 @@ RUN set -eux; \
         ldap \
         exif \
         pcntl \
-        posix \
         bcmath \
     ; \
     docker-php-ext-enable \
@@ -124,9 +123,7 @@ RUN set -eux; \
     rm -rf /usr/src/EspoCRM*; \
     mkdir -p /usr/src/espocrm; \
     cp -a ./client/ /usr/src/espocrm/; \
-    cp -a ./public/ /usr/src/espocrm/
-
-RUN set -eux; \
+    cp -a ./public/ /usr/src/espocrm/; \
     rm -rf ./install; \
     find . -type d -exec chmod 755 {} +; \
     find . -type f -exec chmod 644 {} +; \
@@ -134,7 +131,7 @@ RUN set -eux; \
     chown -R www-data:www-data ./data ./custom ./client/custom; \
     chmod +x ./bin/command
 
-COPY ./docker-*.sh  /usr/local/bin/
+COPY ./docker-*.sh ./entrypoint-utils.sh /usr/local/bin/
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 
