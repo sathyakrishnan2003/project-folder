@@ -102,9 +102,7 @@ RUN set -eux; \
     rm -rf /usr/src/EspoCRM*; \
     mkdir -p /usr/src/espocrm; \
     cp -a ./client/ /usr/src/espocrm/; \
-    cp -a ./public/ /usr/src/espocrm/
-
-RUN set -eux; \
+    cp -a ./public/ /usr/src/espocrm/; \
     rm -rf ./install; \
     find . -type d -exec chmod 755 {} +; \
     find . -type f -exec chmod 644 {} +; \
