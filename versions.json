@@ -10,9 +10,9 @@
       "fpm": "fpm-trixie",
       "fpm-alpine": "fpm-alpine3.23"
     },
-    "downloadUrl": "https://www.espocrm.com/downloads/EspoCRM-10.0.4.zip",
+    "downloadUrl": "https://www.espocrm.com/downloads/EspoCRM-10.0.5.zip",
     "phpVersion": "8.4",
-    "sha256": "8b67939599395fae1f99b2e7a4632a4982d3540ed5173691bdcc3bf0b3484433",
+    "sha256": "1182d4b04277b8c33637e25e12483b8d75bbe171412c282d23772ae145a04659",
     "templates": {
       "apache": "debian",
       "fpm": "debian",
@@ -23,6 +23,6 @@
       "fpm",
       "fpm-alpine"
     ],
-    "version": "10.0.4"
+    "version": "10.0.5"
   }
 }
