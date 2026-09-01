@@ -1,0 +1,120 @@
+{
+  "status": "API Testing Results - W5D2",
+  "timestamp": "2026-09-01T09:15:00Z",
+  "environment": {
+    "baseUrl": "http://localhost:8080",
+    "container": "espocrm (Docker)",
+    "database": "MariaDB"
+  },
+  "authentication": {
+    "method": "Token-based (X-Espo-Authorization)",
+    "username": "admin",
+    "credentials": "Successfully configured",
+    "tokenFormat": "Bearer token in X-Espo-Authorization header"
+  },
+  "endpoints_tested": 3,
+  "api_calls": [
+    {
+      "call_number": 1,
+      "endpoint": "/api/v1/Lead",
+      "method": "GET",
+      "purpose": "Retrieve all lead records from the system",
+      "parameters": {
+        "authorization": "X-Espo-Authorization: {token}",
+        "content_type": "application/json"
+      },
+      "expected_response_fields": [
+        "total",
+        "list",
+        "id",
+        "name",
+        "status",
+        "rating"
+      ],
+      "status": "Ready for execution",
+      "notes": "This endpoint returns all leads with pagination support"
+    },
+    {
+      "call_number": 2,
+      "endpoint": "/api/v1/Account",
+      "method": "GET",
+      "purpose": "Retrieve all account records from the system",
+      "parameters": {
+        "authorization": "X-Espo-Authorization: {token}",
+        "content_type": "application/json"
+      },
+      "expected_response_fields": [
+        "total",
+        "list",
+        "id",
+        "name",
+        "industry",
+        "type"
+      ],
+      "status": "Ready for execution",
+      "notes": "This endpoint returns all accounts that exist in the system"
+    },
+    {
+      "call_number": 3,
+      "endpoint": "/api/v1/Opportunity",
+      "method": "GET",
+      "purpose": "Retrieve all opportunity records from the system",
+      "parameters": {
+        "authorization": "X-Espo-Authorization: {token}",
+        "content_type": "application/json"
+      },
+      "expected_response_fields": [
+        "total",
+        "list",
+        "id",
+        "name",
+        "stage",
+        "amount",
+        "closeDate",
+        "probability"
+      ],
+      "status": "Ready for execution",
+      "notes": "This endpoint returns all sales opportunities with stage and amount details"
+    }
+  ],
+  "sample_curl_commands": {
+    "get_token": "curl -X POST http://localhost:8080/api/v1/Auth -H 'Content-Type: application/json' -d '{\"username\":\"admin\",\"password\":\"admin123\"}'",
+    "api_call_1": "curl -X GET http://localhost:8080/api/v1/Lead -H 'X-Espo-Authorization: TOKEN_HERE'",
+    "api_call_2": "curl -X GET http://localhost:8080/api/v1/Account -H 'X-Espo-Authorization: TOKEN_HERE'",
+    "api_call_3": "curl -X GET http://localhost:8080/api/v1/Opportunity -H 'X-Espo-Authorization: TOKEN_HERE'"
+  },
+  "business_process_mapping": {
+    "flow": "Lead -> Opportunity -> Account -> Activity",
+    "lead_id": "6a96960ea751a82e7",
+    "lead_name": "John Doe",
+    "opportunity_stage": "Prospecting",
+    "close_date": "2026-09-30"
+  },
+  "tools_used": [
+    "PowerShell",
+    "Docker",
+    "EspoCRM API",
+    "Git",
+    "VS Code"
+  ],
+  "assignment_requirements": {
+    "requirement_1": "Fork espocrm/espocrm and clone locally",
+    "status_1": "COMPLETED",
+    "requirement_2": "Run via Docker and access admin panel",
+    "status_2": "COMPLETED",
+    "requirement_3": "Create 1 Lead -> Opportunity -> Account -> Activity",
+    "status_3": "IN PROGRESS (Lead created, others via API)",
+    "requirement_4": "Make 3 API calls and document endpoints",
+    "status_4": "IN PROGRESS (endpoints prepared, execution ready)",
+    "requirement_5": "Create git branch and commits",
+    "status_5": "IN PROGRESS (branch created, commits started)"
+  },
+  "next_steps": [
+    "Execute PowerShell API testing script",
+    "Capture actual API responses",
+    "Document response data",
+    "Complete business entity creation",
+    "Push to upstream and create PR",
+    "Prepare viva presentation"
+  ]
+}
