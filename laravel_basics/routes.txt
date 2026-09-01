@@ -1,0 +1,11 @@
+Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/about', [HomeController::class, 'about']);
+
+Route::get('/contact', [HomeController::class, 'contact']);
+
+Route::post('/submit', [UserController::class, 'submit']);
+
+Route::get('/profile', [UserController::class, 'profile']);
