@@ -1,60 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="styles.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HTML5 Structure and Semantics Practice">
-    <title>HTML5 Structure & Semantics</title>
+
+    <title>Week 2 - CSS Advanced</title>
+
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
 
-<header>
-    <h1>HTML5 Structure & Semantics</h1>
+<header id="home">
+
+    <h1>CSS Advanced</h1>
+
+    <p>Week 2 - Day 1</p>
+
 </header>
 
-<nav aria-label="Main Navigation">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+<nav class="navbar">
+
+    <div class="logo">My Portfolio</div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
     </ul>
+
+    <button id="themeBtn">🌙 Theme</button>
+
 </nav>
 
 <main>
 
-<section>
-    <h2>About HTML5</h2>
+<section id="about">
 
-    <article>
-        <h3>Semantic Elements</h3>
+<h2>About CSS Advanced</h2>
 
-        <p>
-            Semantic HTML elements improve accessibility,
-            SEO, and code readability.
-        </p>
+<p>
 
-    </article>
+Learn CSS Variables, Animations, Sticky Navigation,
+
+Pseudo-elements and Smooth Scrolling.
+
+</p>
 
 </section>
 
-<aside aria-label="Related Information">
-    <h3>Related Links</h3>
+<section class="grid-container" id="projects">
 
-    <ul>
-        <li><a href="#">HTML Reference</a></li>
-        <li><a href="#">Accessibility Guide</a></li>
-    </ul>
+<div class="card">Project 1</div>
 
-</aside>
+<div class="card">Project 2</div>
+
+<div class="card">Project 3</div>
+
+<div class="card">Project 4</div>
+
+<div class="card">Project 5</div>
+
+<div class="card">Project 6</div>
+
+</section>
+
+<h2>Loading Spinner</h2>
+
+<div class="spinner"></div>
+
+<h2>Progress</h2>
+
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+<section id="contact">
+
+<button id="btn">Click Me</button>
+
+</section>
 
 </main>
 
 <footer>
-    <p>&copy; 2026 Cynaris Internship</p>
+
+<p>&copy; 2026 Cynaris Internship</p>
+
 </footer>
 
+<script src="script.js"></script>
+
 </body>
+
 </html>
