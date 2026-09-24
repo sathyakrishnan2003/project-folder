@@ -1,0 +1,18 @@
+[
+  {
+    "role": "Full Stack Developer",
+    "required_skills": ["PHP", "Laravel", "JavaScript"]
+  },
+  {
+    "role": "Backend Developer",
+    "required_skills": ["PHP", "Laravel", "SQL"]
+  },
+  {
+    "role": "AI Developer",
+    "required_skills": ["Python", "AI", "APIs"]
+  },
+  {
+    "role": "Frontend Developer",
+    "required_skills": ["JavaScript", "HTML", "CSS"]
+  }
+]
